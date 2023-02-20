@@ -1,3 +1,8 @@
+"""
+Ottaa sisään .csv tiedoston jossa on yhdessä sarakkeessa
+kiinteistötunnuksia, tekee niistä listan ja lataa niiden kiinteistöjen
+rajat MMLn OGC API Features palvelusta.
+"""
 import os
 import sys
 import requests
