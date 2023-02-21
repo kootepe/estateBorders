@@ -8,11 +8,17 @@ import sys
 import requests
 import pandas as pd
 
-tunnusDF = pd.read_csv('./metsaanTilat.csv',
-                        usecols=[0])
+kiinteistotunnus = sys.argv
 
-tunnusLista = tunnusDF['tunnus'].values.tolist()
-tunnusLista = sorted(tunnusLista)
+if len(kiinteistotunnus) > 1:
+    for i in range(1, len(kiinteistotunnus)):
+                   tunnusLista = kiinteistotunnus[1:]
+else:
+    tunnusDF = pd.read_csv('./metsaanTilat.csv',
+                            usecols=[0])
+
+    tunnusLista = tunnusDF['tunnus'].values.tolist()
+    tunnusLista = sorted(tunnusLista)
 
 apiKey = '3ab64aed-4375-4586-bfe7-fe9a7f580c03'
 
